@@ -34,6 +34,9 @@ pipeline {
         stage("参数化") {
             steps{
                 echo "flag:${params.userFlag}"
+                echo "deploy_env:${params.deploy_env}"
+                echo "deploy_text:${params.deploy_text}"
+                echo "选择部署环境:${params.choice}"
             }
         }
     }
