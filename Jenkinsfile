@@ -6,7 +6,6 @@ pipeline {
     stages {
         stage('Build'){
             steps {
-                pwd
                 script {
 
                     def browsers = ['chrome','firefox']
