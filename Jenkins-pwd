@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+    stages{
+        stage("开始"){
+            withCredentials([
+                    usernamePassword(
+                            credentialsId:'wangxulong-github',
+                            usernameVariable:'username',
+                            passwordVariable:'passwd'
+                    )
+            ]){
+                echo "${username},${passwd}"
+            }
+
+            echo "${usernaem}----外边的"
+        }
+    }
+}
