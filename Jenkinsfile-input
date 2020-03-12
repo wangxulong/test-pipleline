@@ -20,7 +20,7 @@ pipeline {
 
             }
         }
-        stage('deploy') {
+        stage('deployParams') {
             steps {
                 echo "操作者是：${approvalMap['APPROVER']}"
                 echo "发布到环境：${approvalMap['ENV']}"
