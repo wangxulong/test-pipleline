@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('deploy'){
             steps {
-                input message "发布或变更"
+                input message: "发布或变更"
             }
         }
     }
