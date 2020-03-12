@@ -5,6 +5,9 @@ pipeline {
     }
     parameters {
         booleanParam(defaultValue:true, description:'', name:"userFlag")
+        string(defaultValue:'staging', description:'', name:"deploy_env")
+        text(defaultValue:'one\nTwo\nThree', description:'', name:"deploy_text")
+        choice(name:'choice', choices:'dev\ntest\nprod',description: "选择部署环境")
     }
     stages {
         stage('Build'){
