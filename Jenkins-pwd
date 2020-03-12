@@ -2,18 +2,16 @@ pipeline {
     agent any
     stages{
         stage("开始"){
-            withCredentials([
-                    usernamePassword(
-                            credentialsId:'wangxulong-github',
-                            usernameVariable:'username',
-                            passwordVariable:'passwd'
-                    )
-            ]){
-                echo "${username},${passwd}"
-            }
-
             steps{
-                echo "${usernaem}----外边的"
+                script{
+                    withCredentials([usernamePassword(
+                            credentialsId: 'ded8a991-4157-4e65-ba75-fc43af77a9ba',
+                            passwordVariable: 'password',
+                            usernameVariable: 'username')]) {
+                        echo "${username},${password}"
+                    }
+                }
+
             }
 
 
