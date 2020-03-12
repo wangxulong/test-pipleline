@@ -3,6 +3,9 @@ pipeline {
     tools {
         maven 'mvn-3.6.3'
     }
+    parameters {
+        booleanParam(defaultValue:true, description:'', name:"userFlag")
+    }
     stages {
         stage('Build'){
             steps {
@@ -21,7 +24,13 @@ pipeline {
         stage("环境变量") {
             steps {
                 echo "Runing ${env.BUILD_NUMBER} on ${env.JENKINS_URL}"
-                echo "Runing ${env.BRANCH_NAME} "
+
+            }
+        }
+
+        stage("参数化") {
+            steps{
+                echo "flag:${params.userFlag}"
             }
         }
     }
