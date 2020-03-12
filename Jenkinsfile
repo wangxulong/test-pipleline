@@ -33,6 +33,7 @@ pipeline {
 
         stage("参数化") {
             steps{
+                echo "答应参数"
                 echo "flag:${params.userFlag}"
                 echo "deploy_env:${params.deploy_env}"
                 echo "deploy_text:${params.deploy_text}"
