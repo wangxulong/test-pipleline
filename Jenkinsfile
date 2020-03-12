@@ -15,6 +15,7 @@ pipeline {
                 }
             }
             steps{
+
                 echo "部署测试环境：${params.deployEnv}"
             }
         }
